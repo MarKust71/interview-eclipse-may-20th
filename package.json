@@ -20,6 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "plop": "plop",
     "eject": "react-scripts eject",
     "eslint:fix": "eslint --fix .",
     "prettier:fix": "prettier --write ."
@@ -28,7 +29,8 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "ignorePatterns": ["*.hbs", "plop-templates/**/*.hbs"]
   },
   "browserslist": {
     "production": [
@@ -43,6 +45,8 @@
     ]
   },
   "devDependencies": {
+    "inquirer-directory": "^2.2.0",
+    "plop": "^2.7.4",
     "prettier": "^2.3.0"
   },
   "prettier": {
@@ -50,6 +54,7 @@
     "singleQuote": true,
     "tabWidth": 2,
     "semi": true,
-    "jsxSingleQuote": false
+    "jsxSingleQuote": false,
+    "printWidth": 120
   }
 }

@@ -1,0 +1,7 @@
+.container-product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: calc(100% - 30px);
+}

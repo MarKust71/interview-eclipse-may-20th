@@ -1,0 +1,21 @@
+.container-image-logo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 147px;
+  max-height: 147px;
+  width: auto;
+}
+
+.product-image {
+  max-height: 147px;
+}

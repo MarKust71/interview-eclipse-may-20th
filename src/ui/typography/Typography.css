@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Sequel Sans';
+  src: url('../fonts/Sequel Sans Black Head.ttf') format('truetype');
+}
+
+.typography-default {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.typography-button {
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.typography-header {
+  font-family: 'Sequel Sans';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0;
+  text-align: left;
+
+  color: #333;
+}
+
+.typography-reviews {
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0;
+  text-align: left;
+
+  color: #333;
+}

@@ -1,0 +1,40 @@
+.container-photo-box-desktop {
+  width: 100%;
+  max-width: 657px;
+  min-height: 641px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  box-shadow: 2px 8px 6px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 20px;
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.container-photo-box-desktop::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.description-box {
+  height: 238px;
+  width: 100%;
+  max-width: 657px;
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(230, 230, 230, 0.572917) 23.96%, #ffffff 100%);
+
+  border-radius: 0 0 20px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}

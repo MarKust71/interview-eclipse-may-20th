@@ -4,7 +4,7 @@ import { Typography } from 'ui/typography/Typography';
 import './Button.css';
 
 import { ButtonProps } from './Button.types';
-import { Box } from '../box/Box';
+import { Box } from 'ui/box/Box';
 
 export const Button: React.FC<ButtonProps> = ({ children, icon, fullWidth = false }) => {
   return (

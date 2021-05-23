@@ -1,28 +1,26 @@
 import React from 'react';
 
-import { ProductCard } from 'ui/productCard/ProductCard';
-
-import ProductImage from 'assets/sample/sample-picture.png';
-import ProducerLogo from 'assets/logo/logo-lg.svg';
+import './Main.css';
+import { Typography } from 'ui/typography/Typography';
+import { Box } from 'ui/box/Box';
+import { Link } from 'ui/link/Link';
 
 export const Main = (): JSX.Element => {
-  const isCardActive = true;
   return (
-    <ProductCard
-      isActive={isCardActive}
-      header={'LG OLED65BX6LB 65" 4K OLED Smart TV - A Energy Rated'}
-      recommendation={'Eclipse recommendation'}
-      stars={5}
-      reviews={'XX'}
-      image={ProductImage}
-      logo={ProducerLogo}
-      labels={[
-        'Self-lit pixels',
-        'α7 Gen3 Intelligent Processor 4K',
-        'Transform your TV into a central hub with ThinQ AI',
-        'Dolby Vision IQ & Dolby Atmos',
-        '2 year warranty',
-      ]}
-    />
+    <div className="container-main">
+      <div className="wrapper-main">
+        <Typography variant="header">Simple menu</Typography>
+        <Box mb={6} />
+        <Link href={'/shop'}>
+          <Typography>Shop</Typography>
+        </Link>
+        <Link href={'/photos/mobile'}>
+          <Typography>Photos - mobile</Typography>
+        </Link>
+        <Link href={'/photos/desktop'}>
+          <Typography>Photos - desktop</Typography>
+        </Link>
+      </div>
+    </div>
   );
 };

@@ -1,3 +1,8 @@
+#[Recruitmrnt task wireframes](https://www.figma.com/file/4iBOAI6nBHmQrI3To8BFu4/Front-end-Developer-Test?node-id=0%3A1)
+
+To fetch pictures from Unsplash.com you need to provide your API key and store it in the `.env` file (compare
+the `.envexample` file).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -44,5 +49,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-https://www.figma.com/file/4iBOAI6nBHmQrI3To8BFu4/Front-end-Developer-Test?node-id=0%3A1

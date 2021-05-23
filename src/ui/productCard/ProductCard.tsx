@@ -13,6 +13,7 @@ import BasketIcon from 'assets/basket-white.svg';
 import { Rank } from 'ui/rank/Rank';
 import { ImageLogo } from 'ui/imageLogo/ImageLogo';
 import { CheckTextContainer } from 'ui/checkTextContainer/CheckTextContainer';
+import { PriceBox } from '../priceBox/PriceBox';
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   isActive = false,
@@ -36,6 +37,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <ImageLogo image={image} logo={logo} />
           <Box mb={1.75} />
           <CheckTextContainer labels={labels} />
+          <Box mb={2.5} />
+          <PriceBox price={1599} rrp={1799} />
         </div>
         <Button fullWidth icon={BasketIcon}>
           ADD TO BASKET

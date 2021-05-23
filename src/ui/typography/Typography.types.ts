@@ -1,7 +1,8 @@
 import React from 'react';
 
+export type TypographyVariants = 'header' | 'button' | 'reviews' | 'rrp' | 'price' | 'warning' | undefined;
 export type TypographyProps = React.HTMLAttributes<HTMLDivElement> & {
-  variant?: 'header' | 'button' | 'reviews' | 'rrp' | 'price';
+  variant?: TypographyVariants;
 };
 
 export enum TYPOGRAPHY_VARIANT {
@@ -10,4 +11,5 @@ export enum TYPOGRAPHY_VARIANT {
   reviews = 'typography-reviews',
   rrp = 'typography-rrp',
   price = 'typography-price',
+  warning = 'typography-warning',
 }

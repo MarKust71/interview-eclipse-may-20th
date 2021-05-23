@@ -6,7 +6,7 @@ import './Typography.css';
 
 export const Typography: React.FC<TypographyProps> = ({ variant, children, ...props }) => {
   return (
-    <div className={`${props.className} ${variant ? TYPOGRAPHY_VARIANT[variant] : 'typography-default'}`}>
+    <div className={`${props.className} ${variant ? TYPOGRAPHY_VARIANT[variant] : 'typography-default'}`} {...props}>
       {children}
     </div>
   );

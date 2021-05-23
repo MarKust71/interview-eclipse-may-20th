@@ -33,3 +33,13 @@
   background: rgba(237, 20, 61, 0.2);
   border-radius: 4px;
 }
+
+.strike-diagonal {
+  background: linear-gradient(
+    to left top,
+    transparent 47.75%,
+    currentColor 49.5%,
+    currentColor 50.5%,
+    transparent 52.25%
+  );
+}

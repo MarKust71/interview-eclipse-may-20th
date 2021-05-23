@@ -14,6 +14,8 @@ import { Rank } from 'ui/rank/Rank';
 import { ImageLogo } from 'ui/imageLogo/ImageLogo';
 import { CheckTextContainer } from 'ui/checkTextContainer/CheckTextContainer';
 import { PriceBox } from '../priceBox/PriceBox';
+import { ProgressBar } from '../progressBar/ProgressBar';
+import { DeliveryBox } from '../deliveryBox/DeliveryBox';
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   isActive = false,
@@ -24,6 +26,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   image,
   logo,
   labels,
+  price,
+  rrp,
+  progress,
+  delivery,
 }) => {
   return (
     <LayoutGeneral isActive={isActive}>
@@ -38,11 +44,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <Box mb={1.75} />
           <CheckTextContainer labels={labels} />
           <Box mb={2.5} />
-          <PriceBox price={1599} rrp={1799} />
+          <PriceBox price={price} rrp={rrp} />
+          <Box mb={2.75} />
+          <ProgressBar
+            max={progress.max}
+            actual={progress.actual}
+            threshold={progress.threshold}
+            label={progress.label}
+            warning={progress.warning}
+          />
+          <Box mb={2.25} />
         </div>
-        <Button fullWidth icon={BasketIcon}>
-          ADD TO BASKET
-        </Button>
+        <div className="order">
+          <DeliveryBox closestDelivery={delivery.closestDelivery} orderingDeadline={delivery.orderingDeadline} />
+          <Box mb={2} />
+          <Button fullWidth icon={BasketIcon}>
+            ADD TO BASKET
+          </Button>
+        </div>
       </div>
     </LayoutGeneral>
   );

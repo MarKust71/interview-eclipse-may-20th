@@ -32,7 +32,7 @@ export const Main = (): JSX.Element => {
       rrp={1799}
       progress={{
         max: 100,
-        actual: 20,
+        actual: 30,
         threshold: 25,
         label: 'In stock',
         warning: 'Last few left',

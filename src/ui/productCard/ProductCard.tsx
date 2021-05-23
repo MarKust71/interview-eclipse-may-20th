@@ -44,7 +44,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <Box mb={1.75} />
           <CheckTextContainer labels={labels} />
           <Box mb={2.5} />
-          <PriceBox price={price} rrp={rrp} />
+          <PriceBox price={price} rrp={rrp} isWarning={progress.actual < progress.threshold} />
           <Box mb={2.75} />
           <ProgressBar
             max={progress.max}

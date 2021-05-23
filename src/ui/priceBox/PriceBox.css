@@ -7,11 +7,10 @@
 }
 
 .rrp {
-  color: #bfbfbf;
+  color: rgba(191, 191, 191, 1);
 }
 
 .price {
-  color: #ed143d;
 }
 
 .price-save {

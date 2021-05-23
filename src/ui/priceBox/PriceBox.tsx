@@ -5,7 +5,7 @@ import { Typography } from '../typography/Typography';
 
 import './PriceBox.css';
 
-export const PriceBox: React.FC<PriceBoxProps> = ({ price, rrp }) => {
+export const PriceBox: React.FC<PriceBoxProps> = ({ price, rrp, isWarning = false }) => {
   const recommendedPrice = rrp ?? price;
 
   return (
@@ -16,17 +16,23 @@ export const PriceBox: React.FC<PriceBoxProps> = ({ price, rrp }) => {
         </Typography>
       )}
       <div className="price-save">
-        <Typography variant="price" className="price">
+        <Typography
+          variant="price"
+          className="price"
+          style={{ color: `${isWarning ? 'rgba(237, 20, 61, 1)' : 'rgba(51, 51, 51, 1)'}` }}
+        >
           {Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(price)}
         </Typography>
-        <div className="container-save ">
-          <Typography variant="rrp" className="save">
-            {`Save ${Intl.NumberFormat('en-GB', {
-              style: 'currency',
-              currency: 'GBP',
-            }).format(recommendedPrice - price)}`}
-          </Typography>
-        </div>
+        {isWarning && (
+          <div className="container-save ">
+            <Typography variant="rrp" className="save">
+              {`Save ${Intl.NumberFormat('en-GB', {
+                style: 'currency',
+                currency: 'GBP',
+              }).format(recommendedPrice - price)}`}
+            </Typography>
+          </div>
+        )}
       </div>
     </div>
   );

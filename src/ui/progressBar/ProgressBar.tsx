@@ -5,7 +5,6 @@ import { Typography } from 'ui/typography/Typography';
 
 import './ProgressBar.css';
 import { Box } from 'ui/box/Box';
-import { TypographyVariants } from 'ui/typography/Typography.types';
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({ max, actual, threshold, label, warning }) => {
   const isWarning = actual < threshold;
@@ -21,10 +20,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ max, actual, threshold
         />
       </div>
       <Box mb={1.25} />
-      <Typography
-        style={{ color: `${isWarning ? 'rgba(237, 20, 61, 1)' : 'rgba(39, 174, 96, 1)'}` }}
-        variant={`${isWarning ? 'warning' : undefined}` as TypographyVariants}
-      >
+      <Typography style={{ color: `${isWarning ? 'rgba(237, 20, 61, 1)' : 'rgba(39, 174, 96, 1)'}` }} variant="warning">
         {isWarning ? warning : label}
       </Typography>
     </div>

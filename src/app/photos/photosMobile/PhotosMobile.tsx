@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import { PhotosMobileProps } from './PhotosMobile.types';
 import { fetchUnsplashPhotos } from 'api/fetchUnsplashPhotos';
 import { UnsplashData } from 'api/fetchUnsplashPhotos.types';
 import { LayoutPhotosGeneral } from 'ui/layout/layoutPhotosGeneral/LayoutPhotosGeneral';
@@ -9,7 +8,7 @@ import { Box } from 'ui/box/Box';
 
 import './PhotosMobile.css';
 
-export const PhotosMobile: React.FC<PhotosMobileProps> = ({}) => {
+export const PhotosMobile = (): JSX.Element => {
   const [images, setImages] = useState<UnsplashData[]>([]);
 
   useEffect(() => {
@@ -22,7 +21,7 @@ export const PhotosMobile: React.FC<PhotosMobileProps> = ({}) => {
     fetchData();
   }, []);
 
-  if (!images || images.length < 1) return null;
+  if (!images || images.length < 1) return <></>;
 
   return (
     <LayoutPhotosGeneral>

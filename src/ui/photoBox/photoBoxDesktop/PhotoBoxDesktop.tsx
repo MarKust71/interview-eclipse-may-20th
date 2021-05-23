@@ -4,7 +4,7 @@ import { PhotoBoxDesktopProps } from './PhotoBoxDesktop.types';
 
 import './PhotoBoxDesktop.css';
 import { Typography } from 'ui/typography/Typography';
-import { Link } from '../../link/Link';
+import { Link } from 'ui/link/Link';
 
 export const PhotoBoxDesktop: React.FC<PhotoBoxDesktopProps> = ({
   description,

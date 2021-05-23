@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import { PhotosDesktopProps } from './PhotosDesktop.types';
 import { LayoutPhotosGeneral } from 'ui/layout/layoutPhotosGeneral/LayoutPhotosGeneral';
 
 import './PhotosDesktop.css';
@@ -9,7 +8,7 @@ import { fetchUnsplashPhotos } from 'api/fetchUnsplashPhotos';
 import { PhotoBoxDesktop } from 'ui/photoBox/photoBoxDesktop/PhotoBoxDesktop';
 import { Typography } from 'ui/typography/Typography';
 
-export const PhotosDesktop: React.FC<PhotosDesktopProps> = ({}) => {
+export const PhotosDesktop = (): JSX.Element => {
   const [images, setImages] = useState<UnsplashData[]>([]);
 
   const fetchData = async () => {
@@ -27,13 +26,13 @@ export const PhotosDesktop: React.FC<PhotosDesktopProps> = ({}) => {
     fetchData();
   }, []);
 
-  if (!images || images.length < 1) return null;
+  if (!images || images.length < 1) return <></>;
 
   return (
     <LayoutPhotosGeneral>
       <Typography>Click to fetch next image...</Typography>
       <div className="wrapper-photos-desktop" onClick={handleClick}>
-        {images.map((image, index) => {
+        {images.map((image) => {
           const firstName = image.user.firstName ?? '';
           const lastName = image.user.lastName ?? '';
           const author = `${lastName}${firstName && lastName ? ', ' : ''}${firstName}`;

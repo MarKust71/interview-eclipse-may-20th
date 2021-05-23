@@ -13,7 +13,7 @@ import BasketIcon from 'assets/basket-white.svg';
 import { Rank } from 'ui/rank/Rank';
 import { ImageLogo } from 'ui/imageLogo/ImageLogo';
 import { CheckTextContainer } from 'ui/checkTextContainer/CheckTextContainer';
-import { PriceBox } from '../priceBox/PriceBox';
+import { PriceBox } from 'ui/priceBox/PriceBox';
 import { ProgressBar } from 'ui/progressBar/ProgressBar';
 import { Delivery } from 'app/delivery/Delivery';
 

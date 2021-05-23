@@ -2,10 +2,15 @@
   height: calc(100vh - 25px);
   padding: 20px;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .inner-container {
   overflow: auto;
+  max-width: 360px;
   height: calc(100% - 2 * 20px);
   padding: 0 20px 20px 20px;
   background: #fff;
@@ -14,6 +19,7 @@
   border: 2px solid #fff;
   /*border-image-source: linear-gradient(116.7deg, #333333 9.51%, #1e1e1e 95.18%);*/
 }
+
 .inner-container-active {
   border: 2px solid #1e1e1e;
   box-shadow: 0 0 20px #e61577;

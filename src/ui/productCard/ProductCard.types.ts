@@ -1,5 +1,5 @@
 import { ProgressBarProps } from 'ui/progressBar/ProgressBar.types';
-import { DeliveryBoxProps } from '../deliveryBox/DeliveryBox.types';
+import { DeliveryProps } from 'app/delivery/Delivery.types';
 
 export type ProductCardProps = {
   isActive?: boolean;
@@ -13,5 +13,5 @@ export type ProductCardProps = {
   price: number;
   rrp: number;
   progress: ProgressBarProps;
-  delivery: DeliveryBoxProps;
+  delivery: DeliveryProps;
 };

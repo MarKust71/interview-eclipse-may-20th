@@ -14,8 +14,8 @@ import { Rank } from 'ui/rank/Rank';
 import { ImageLogo } from 'ui/imageLogo/ImageLogo';
 import { CheckTextContainer } from 'ui/checkTextContainer/CheckTextContainer';
 import { PriceBox } from '../priceBox/PriceBox';
-import { ProgressBar } from '../progressBar/ProgressBar';
-import { DeliveryBox } from '../deliveryBox/DeliveryBox';
+import { ProgressBar } from 'ui/progressBar/ProgressBar';
+import { Delivery } from 'app/delivery/Delivery';
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   isActive = false,
@@ -56,7 +56,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <Box mb={2.25} />
         </div>
         <div className="order">
-          <DeliveryBox closestDelivery={delivery.closestDelivery} orderingDeadline={delivery.orderingDeadline} />
+          <Delivery closestDelivery={delivery.closestDelivery} orderingDeadline={delivery.orderingDeadline} />
           <Box mb={2} />
           <Button fullWidth icon={BasketIcon}>
             ADD TO BASKET

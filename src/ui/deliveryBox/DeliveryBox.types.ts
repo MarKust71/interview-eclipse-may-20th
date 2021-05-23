@@ -1,4 +1,4 @@
 export type DeliveryBoxProps = {
-  closestDelivery?: Date;
-  orderingDeadline?: Date;
+  timeLeft: string;
+  closestDeliveryDate: string;
 };

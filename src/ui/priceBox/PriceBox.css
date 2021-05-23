@@ -6,13 +6,6 @@
   align-items: flex-start;
 }
 
-.rrp {
-  color: rgba(191, 191, 191, 1);
-}
-
-.price {
-}
-
 .price-save {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -33,7 +26,8 @@
   border-radius: 4px;
 }
 
-.strike-diagonal {
+.rrp-strike-diagonal {
+  color: rgba(191, 191, 191, 1);
   background: linear-gradient(
     to left top,
     transparent 47.75%,

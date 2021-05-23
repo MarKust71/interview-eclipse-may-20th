@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { PriceBoxProps } from './PriceBox.types';
-import { Typography } from '../typography/Typography';
+import { Typography } from 'ui/typography/Typography';
 
 import './PriceBox.css';
 
@@ -11,16 +11,12 @@ export const PriceBox: React.FC<PriceBoxProps> = ({ price, rrp, isWarning = fals
   return (
     <div className="container-price-box">
       {recommendedPrice !== price && (
-        <Typography variant="rrp" className="rrp strike-diagonal">
+        <Typography variant="rrp" className="rrp-strike-diagonal">
           {`RRP ${Intl.NumberFormat('en-EN', { style: 'currency', currency: 'GBP' }).format(recommendedPrice)}`}
         </Typography>
       )}
       <div className="price-save">
-        <Typography
-          variant="price"
-          className="price"
-          style={{ color: `${isWarning ? 'rgba(237, 20, 61, 1)' : 'rgba(51, 51, 51, 1)'}` }}
-        >
+        <Typography variant="price" style={{ color: `${isWarning ? 'rgba(237, 20, 61, 1)' : 'rgba(51, 51, 51, 1)'}` }}>
           {Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(price)}
         </Typography>
         {isWarning && (

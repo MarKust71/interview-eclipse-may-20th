@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { DeliveryBoxProps } from './DeliveryBox.types';
 
@@ -11,16 +11,22 @@ import { Typography } from 'ui/typography/Typography';
 import parse from 'html-react-parser';
 
 export const DeliveryBox: React.FC<DeliveryBoxProps> = ({ closestDelivery, orderingDeadline }) => {
-  const [timeLeft, setTimeLeft] = useState('');
+  const [timeLeft, setTimeLeft] = useState('00:00:00');
 
   const closestDeliveryDateString = Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(closestDelivery);
 
+  const timer = useRef(
+    setInterval(() => {
+      const currentDate = new Date();
+      if (orderingDeadline) {
+        setTimeLeft(new Date(orderingDeadline.valueOf() - currentDate.valueOf()).toUTCString().split(' ')[4]);
+      }
+    }, 1000)
+  );
+
   useEffect(() => {
-    const currentDate = new Date();
-    if (orderingDeadline) {
-      setTimeLeft(new Date(orderingDeadline.valueOf() - currentDate.valueOf()).toUTCString().split(' ')[4]);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const currentTimer = timer.current;
+    return () => clearInterval(currentTimer);
   }, []);
 
   if (closestDelivery === undefined || orderingDeadline === undefined) {

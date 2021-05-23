@@ -26,7 +26,7 @@ export const Main = (): JSX.Element => {
         'α7 Gen3 Intelligent Processor 4K',
         'Transform your TV into a central hub with ThinQ AI',
         'Dolby Vision IQ & Dolby Atmos',
-        '2 year warranty',
+        '2 years warranty',
       ]}
       price={1599}
       rrp={1799}

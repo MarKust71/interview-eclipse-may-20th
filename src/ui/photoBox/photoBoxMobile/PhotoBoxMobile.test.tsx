@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { PhotoBox } from './PhotoBox';
+import { PhotoBoxMobile } from './PhotoBoxMobile';
 
 describe('PhotoBox', () => {
   test('renders', () => {
-    render(<PhotoBox />);
+    render(<PhotoBoxMobile image={''} />);
     const element = screen.getByText('PhotoBox');
     expect(element).toBeInTheDocument();
   });

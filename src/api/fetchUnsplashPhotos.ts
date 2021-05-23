@@ -4,12 +4,15 @@ import axios from 'axios';
 export const fetchUnsplashPhotos = async ({ query }: FetchUnsplashPhotosTypes) => {
   if (!query) return;
 
-  const url = `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`;
+  const url_query = `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`;
+  const url_random = `https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`;
+
+  const url = query === 'random' ? url_random : url_query;
 
   try {
     const response = await axios.get(url);
 
-    const photosData = [...response.data.results];
+    const photosData = query === 'random' ? [response.data] : [...response.data.results];
 
     return photosData.map((item) => {
       const photo: UnsplashData = {

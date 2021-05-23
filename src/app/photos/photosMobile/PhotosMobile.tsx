@@ -4,8 +4,10 @@ import { PhotosMobileProps } from './PhotosMobile.types';
 import { fetchUnsplashPhotos } from 'api/fetchUnsplashPhotos';
 import { UnsplashData } from 'api/fetchUnsplashPhotos.types';
 import { LayoutPhotosGeneral } from 'ui/layout/layoutPhotosGeneral/LayoutPhotosGeneral';
-import { PhotoBox } from 'ui/photoBox/PhotoBox';
+import { PhotoBoxMobile } from 'ui/photoBox/photoBoxMobile/PhotoBoxMobile';
 import { Box } from 'ui/box/Box';
+
+import './PhotosMobile.css';
 
 export const PhotosMobile: React.FC<PhotosMobileProps> = ({}) => {
   const [images, setImages] = useState<UnsplashData[]>([]);
@@ -24,24 +26,26 @@ export const PhotosMobile: React.FC<PhotosMobileProps> = ({}) => {
 
   return (
     <LayoutPhotosGeneral>
-      {images.map((image, index) => {
-        const firstName = image.user.firstName ?? '';
-        const lastName = image.user.lastName ?? '';
-        const author = `${lastName}${firstName && lastName ? ', ' : ''}${firstName}`;
-        return (
-          <>
-            <PhotoBox
-              key={image.id}
-              description={image.description}
-              image={image.url}
-              author={author}
-              url={`${image.user.userLink}?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`}
-              date={new Date(Date.parse(image.created)).toLocaleDateString('en-GB')}
-            />
-            {index < images.length - 1 && <Box mb={5} />}
-          </>
-        );
-      })}
+      <div className="wrapper-photos-mobile">
+        {images.map((image, index) => {
+          const firstName = image.user.firstName ?? '';
+          const lastName = image.user.lastName ?? '';
+          const author = `${lastName}${firstName && lastName ? ', ' : ''}${firstName}`;
+          return (
+            <>
+              <PhotoBoxMobile
+                key={image.id}
+                description={image.description}
+                image={image.url}
+                author={author}
+                url={`${image.user.userLink}?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`}
+                date={new Date(Date.parse(image.created)).toLocaleDateString('en-GB')}
+              />
+              {index < images.length - 1 && <Box mb={5} />}
+            </>
+          );
+        })}
+      </div>
     </LayoutPhotosGeneral>
   );
 };

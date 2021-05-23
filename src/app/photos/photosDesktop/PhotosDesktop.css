@@ -1,0 +1,17 @@
+.wrapper-photos-desktop {
+  width: calc(1362px + 2 * 39px);
+  padding: 39px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 48px;
+  grid-row-gap: 48px;
+
+  background: rgba(222, 222, 222, 1);
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.wrapper-photos-desktop::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

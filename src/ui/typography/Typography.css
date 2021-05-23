@@ -76,3 +76,13 @@
   letter-spacing: 0;
   text-align: left;
 }
+
+.typography-description {
+  font-family: 'Open Sans';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 0;
+  text-align: left;
+}
